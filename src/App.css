@@ -97,8 +97,8 @@
     background-color: #819f7f;
 }
 
-.userProfile img {
-    height: 200px;
+.userProfile  div img {
+    height: 160px;
     width: auto;
 }
 
@@ -295,39 +295,46 @@
     height: 100%;
 }
 
-.page-item .page-link {
-    background-color: #819f7f;
-    border-color: #fdfbda;
+
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+ {
+    z-index: 3;
+    color:#819f7f;
+    cursor: default;
+    font-weight: 600;
+    background-color: #fdfbda;
+}
+
+.pagination > li > a:hover,
+.pagination > li > a:focus {
+    z-index: 2;
+    color:  #2d4659;
+    transform: scale(1.04);
+    font-weight: 600;
+    background-color: #fdfbda;
+}
+
+.pagination > li > a {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
     color: #fdfbda;
-}
-
-.page-item.active .page-link {
-    background-color: #819f7f !important;
-    border-color: #fdfbda !important;
-    color: #fdfbda !important;
-    box-shadow: none;
-}
-
-.page-item:focus .page-link {
+    text-decoration: none;
     background-color: #819f7f;
-    margin: 10px;
-    color: #819f7f;
-    box-shadow: none !important;
-    outline: none !important;
-    border-color: #fdfbda;
 }
 
-.page-item.active:focus .page-link {
-    background-color: #819f7f;
-    margin: 10px;
-    color: #819f7f;
-    box-shadow: none !important;
-    outline: none !important;
-    border-color: #fdfbda;
-}
-
-.page-item .active {
-    background-color: #2d4659;
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+    color: #777777;
+    cursor: not-allowed;
+    background-color: #ffffff;
+    border-color: #dddddd;
 }
 
 

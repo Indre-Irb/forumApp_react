@@ -12,7 +12,7 @@ const PaginationMain = ({getActivePage, changePage, getPageCount}) => {
                    pageRangeDisplayed={8}
                    onChange={changePage}
                    itemClass="page-item"
-                   linkClass="page-link"
+                   // linkClass="page-link"
                    hideFirstLastPages={true}
                    hideDisabled={true}
                />

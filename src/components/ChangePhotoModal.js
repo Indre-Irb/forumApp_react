@@ -28,17 +28,15 @@ const ChangePhotoModal = () => {
     }
 
     return (
-            <div onClick={(e) => e.stopPropagation()}>
-                <div onClick={closeModal}>
-                    <div className="modal d-flex j-center al-center">
-                        <div className="modalBox d-flex s-evenly al-center f-column">
-                            <input type="text" ref={photoLink} placeholder="Enter photo link"/>
-                            <button onClick={() => changePhoto(getUser._id)}>Change photo</button>
-                        </div>
-                    </div>
-                </div>
 
+
+        <div onClick={closeModal} className="modal d-flex j-center al-center">
+            <div onClick={(e) => e.stopPropagation()} className="modalBox d-flex s-evenly al-center f-column">
+                <input type="text" ref={photoLink} placeholder="Enter photo link"/>
+                <button onClick={() => changePhoto(getUser._id)}>Change photo</button>
             </div>
+
+        </div>
 
     );
 };

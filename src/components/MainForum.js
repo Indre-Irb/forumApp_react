@@ -1,20 +1,17 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import http from "../plugins/http";
 import Topic from "./Topic";
 import MyContext from "../context/MyContext";
-import Loader from "./Loader";
+
 
 
 const MainForum = () => {
 
     const {getTopics, setTopics} = useContext(MyContext)
-    const [getLoader, setLoader] = useState(true)
-
 
     useEffect(() => {
         http.get("allPosts").then(res => {
             if (res.success) {
-                setLoader(false)
                 setTopics(res.allPosts)
             }
         })
@@ -22,7 +19,6 @@ const MainForum = () => {
 
     return (
         <div className="mainForumField d-flex f-column-rev al-center j-center">
-            {getLoader && <Loader/>}
             {getTopics.length > 0 &&
                 getTopics.map((topic, ind) => <Topic topic={topic} key={ind}/>
                 )}

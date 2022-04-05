@@ -41,7 +41,7 @@ const Profile = () => {
             <div className="d-flex al-center j-center">
                 {getUser &&
                     <div className="userProfile d-flex j-center f-md-column">
-                        <div className="flex1 d-flex f-column al-center">
+                        <div className="flex1 d-flex f-column al-center j-center">
                             <img src={getUser.image} alt=""/>
                             <button className="changePhotoButton" onClick={openPhotoModal}>Change profile photo</button>
                         </div>
