@@ -1,38 +1,322 @@
 .App {
-  text-align: center;
+    padding: 10px;
+    height: 100vh;
+    background-color: #fdfbda;
+    height: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Toolbar*/
+
+.toolbar {
+    height: 60px;
+    background-color: #2d4659;
+    color: #fdfbda;
+    font-size: 15px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.registerDiv:hover {
+    cursor: pointer;
+    background-color: #819f7f;
+    height: 60px;
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.loginDiv:hover {
+    cursor: pointer;
+    background-color: #819f7f;
+    height: 60px;
+    width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.mainDiv:hover {
+    cursor: pointer;
+    background-color: #819f7f;
+    height: 60px;
+    width: 80%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/*Login*/
+.loginField {
+    height: 300px;
+    width: 500px;
+    background-color: #d3d0a8;
+    margin-top: 60px;
 }
+
+.loginField input {
+    width: 80%;
+    height: 30px;
+}
+
+.loginField button {
+    width: 80%;
+    height: 40px;
+    background-color: #2d4659;
+    color: #fdfbda;
+    border: none;
+    font-size: 15px;
+}
+
+/*Register*/
+.registerField {
+    height: 400px;
+    width: 500px;
+    background-color: #d3d0a8;
+    margin-top: 60px;
+}
+
+.registerField input {
+    width: 80%;
+    height: 30px;
+}
+
+.registerField button {
+    width: 80%;
+    height: 40px;
+    background-color: #2d4659;
+    color: #fdfbda;
+    border: none;
+    font-size: 15px;
+}
+
+/*Profile*/
+.userProfile {
+    height: 400px;
+    width: 600px;
+    border: 1px solid #2d4659;
+    margin-top: 20px;
+    color: #fdfbda;
+    background-color: #819f7f;
+}
+
+.userProfile img {
+    height: 200px;
+    width: auto;
+}
+
+.postButton {
+    width:100%;
+    height: 40px;
+    background-color: #2d4659;
+    color: #fdfbda;
+    border: none;
+    font-size: 15px;
+    margin: 20px 10px;
+}
+
+.changePhotoButton {
+    width:80%;
+    height: 40px;
+    background-color: #2d4659;
+    color: #fdfbda;
+    border: none;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.modal {
+    z-index: 999;
+    position: fixed;
+    background-color: rgba(129, 159, 127, 0.8);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    backdrop-filter: blur(2px);
+}
+
+.modalBox {
+    height: 250px;
+    width: 350px;
+    background-color: #fdfbda;
+}
+
+.modalBox input {
+    width: 80%;
+    height: 30px;
+}
+
+.modalBox button {
+    width: 80%;
+    height: 40px;
+    background-color: #2d4659;
+    color: #fdfbda;
+    border: none;
+    font-size: 15px
+}
+
+/*Modal*/
+
+.topicModal {
+    width: 100%;
+    height: 30px;
+    background-color: #fdfbda;
+    margin-top: 20px;
+}
+
+.topicModal input {
+    width: 60%;
+    height: 100%;
+
+}
+
+.topicModal button {
+    width: 150px;
+    height: 40px;
+    background-color: #2d4659;
+    color: #fdfbda;
+    border: none;
+    font-size: 15px;
+}
+
+/*Main Forum*/
+
+.mainForumField {
+    height: auto;
+    width: 100%;
+    background-color: #2d4659;
+    color: #fdfbda;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.topicHeader {
+    width: 80%;
+    height: 30px;
+    margin-top: 30px;
+    background-color: #819f7f;
+    color: #fdfbda;
+    font-size: 12px;
+}
+
+.topicHeadline {
+    font-size: 20px;
+}
+
+.forumBox {
+    height: 120px;
+    width: 80%;
+    border: 2px solid #819f7f;
+    margin: 10px;
+    background-color: #fdfbda;
+    color: #2d4659;
+}
+
+.favoriteIcon {
+    font-size: 20px;
+
+}
+
+/*One Topic*/
+.topic {
+    height: 100px;
+    width: 80%;
+    border: 1px solid black;
+    margin: 10px 0;
+}
+
+.replyField {
+    width: 100%;
+}
+
+.replyBox {
+    height: 250px;
+    width: 80%;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+.replyInputs input {
+    width: 80%;
+    height: 30px;
+    margin: 5px 0;
+}
+
+.replyImg {
+    height: 100%;
+}
+
+.replyImg img {
+    height: 150px;
+    box-sizing: border-box;
+}
+
+.replyImage img {
+    height: 150px;
+    width: auto;
+    padding: 10px;
+}
+
+.replyImg {
+    background-color: #819f7f;
+    padding: 10px;
+    height: 100%;
+}
+
+/*Notification*/
+
+.notificationBadge {
+    z-index: 999;
+    position: fixed;
+    background-color: rgba(129, 159, 127);
+    border: 1px solid #2d4659;
+    color: #fdfbda;
+    height: auto;
+    width: 30%;
+    top: 100px;
+    left: 0;
+    margin-left: 10px;
+}
+
+
+/*Main classes*/
+.d-flex {
+    display: flex;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.al-center {
+    align-items: center;
+}
+
+.s-between {
+    justify-content: space-between;
+}
+
+.s-around {
+    justify-content: space-around;
+}
+
+.s-evenly {
+    justify-content: space-evenly;
+}
+
+.f-column {
+    flex-direction: column;
+}
+
+.f-column-rev {
+    flex-direction: column-reverse;
+}
+
+.flex1 {
+    flex: 1
+}
+
+.flex2 {
+    flex: 2
+}
+
+.flex4 {
+    flex: 4
+}
+
+.flex6 {
+    flex: 6
+}
+
+
