@@ -3,6 +3,7 @@ import MyContext from "../context/MyContext";
 import http from "../plugins/http"
 import ChangePhotoModal from "./ChangePhotoModal";
 import Replies from "./Replies";
+import Topic from "./Topic";
 
 const Profile = () => {
 
@@ -34,19 +35,16 @@ const Profile = () => {
         })
     }
 
-    console.log(getMyInfo)
-
     return (
-        <div>
+        <div className="h-auto">
             {getChangePhoto && <ChangePhotoModal setChangePhoto={setChangePhoto}/>}
             <div className="d-flex al-center j-center">
                 {getUser &&
-                    <div className="userProfile d-flex j-center">
+                    <div className="userProfile d-flex j-center f-md-column">
                         <div className="flex1 d-flex f-column al-center">
                             <img src={getUser.image} alt=""/>
                             <button className="changePhotoButton" onClick={openPhotoModal}>Change profile photo</button>
                         </div>
-
                         <div className="d-flex f-column flex1 s-evenly">
                             <div>
                                 User name: {getUser.username}
@@ -68,13 +66,14 @@ const Profile = () => {
                      onClick={() => getMyTopics(getUser._id)}>My topics
                 </div>
             </div>
-            <div>
-                {getMyInfo.postId ?
-                    getMyInfo.map((replies, ind) =>
-                        <Replies replies={replies}/>)
-                    :
-                    getMyInfo.map((replies, ind) =>
-                        <Replies replies={replies}/>)
+            <div className="d-flex j-center al-center f-column">
+                {getMyInfo.length > 0 &&
+                    getMyInfo.map(text =>
+                        text.postId ?
+                                <Replies replies={text}/>
+                            :
+                            <Topic topic={text}/>
+                    )
                 }
             </div>
         </div>

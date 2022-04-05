@@ -8,14 +8,13 @@ const NotificationBadge = ({notify}) => {
     const {getNotification, setNotification} = useContext(MyContext)
     const nav = useNavigate()
 
-    useEffect (() => {
+    useEffect(() => {
 
     }, [getNotification])
 
-    function enterNotification(id){
-        http.get(`closeNotification/${id}`).then(res =>
-        {
-            if(res.success){
+    function enterNotification(id) {
+        http.get(`closeNotification/${id}`).then(res => {
+            if (res.success) {
                 setNotification(false)
                 nav(`/main/${notify._id}`)
             }
@@ -23,9 +22,8 @@ const NotificationBadge = ({notify}) => {
     }
 
     function closeNotification(id) {
-        http.get(`closeNotification/${id}`).then(res =>
-        {
-            if(res.success){
+        http.get(`closeNotification/${id}`).then(res => {
+            if (res.success) {
                 setNotification(false)
             }
         })
@@ -33,10 +31,12 @@ const NotificationBadge = ({notify}) => {
 
     return (
         <div className="notificationBadge">
-            <div>
-                <div onClick={()=> enterNotification(notify._id)}>{notify.post} </div>
-                <div>you have new comment</div>
-                <div onClick={() => closeNotification(notify._id)}>Close</div>
+            <div className="d-flex s-between">
+                <div onClick={() => enterNotification(notify._id)}>
+                    <div className="notificationText">You have new comment</div>
+                    <div className="notificationTextTwo" >{notify.post} </div>
+                </div>
+                <div onClick={() => closeNotification(notify._id)}>X</div>
             </div>
         </div>
     );

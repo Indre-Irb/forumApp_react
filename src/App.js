@@ -20,6 +20,7 @@ function App() {
     const [getChangePhoto, setChangePhoto] = useState(false)
     const [getNotification, setNotification] = useState(false)
     const [getNotificationInfo, setNotificationInfo] = useState([])
+    const [getTopics, setTopics] = useState([])
     const [getActivePage, setActivePage] = useState(1);
     const [getFavorite, setFavorite] = useState([])
 
@@ -41,7 +42,7 @@ function App() {
                 setNotification,
                 getNotificationInfo,
                 setNotificationInfo, getFavorite, setFavorite,
-                getChangePhoto, setChangePhoto
+                getChangePhoto, setChangePhoto, getTopics, setTopics
             }}>
                 <BrowserRouter>
                     <Toolbar/>

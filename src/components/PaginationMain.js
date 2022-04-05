@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Pagination from 'react-js-pagination'
 
 const PaginationMain = ({getActivePage, changePage, getPageCount}) => {
@@ -9,12 +9,11 @@ const PaginationMain = ({getActivePage, changePage, getPageCount}) => {
                    activePage={getActivePage === 0 ? 1 : getActivePage}
                    itemsCountPerPage={10}
                    totalItemsCount={getPageCount}
-                   pageRangeDisplayed={5}
+                   pageRangeDisplayed={8}
                    onChange={changePage}
-                   // itemClass="page-item"
+                   itemClass="page-item"
+                   linkClass="page-link"
                    hideFirstLastPages={true}
-                   nextPageText='Next >'
-                   prevPageText='< Previous'
                    hideDisabled={true}
                />
         </div>

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
 import {IoStarOutline, IoStar} from 'react-icons/io5';
 import MyContext from "../context/MyContext";
@@ -23,7 +23,6 @@ const Topic = ({topic}) => {
         if (getUser) {
             if (getUser._id === topic.userId && topic.isRead) {
                 setNotification(true)
-                console.log(topic)
                 setNotificationInfo([...getNotificationInfo, topic])
             }
         }
@@ -44,7 +43,6 @@ const Topic = ({topic}) => {
                 if (index !== -1) {
                     myFavorites.splice(index, 1)
                     addArray = false
-                    console.log(myFavorites)
                 }
             }
         });
@@ -66,17 +64,11 @@ const Topic = ({topic}) => {
                 <div className="flex1 d-flex al-center j-center favoriteIcon" onClick={() => addFavorite(topic._id)}>
                     <IoStar/>
                 </div>}
-            <div className="d-flex flex6 al-center" onClick={() => open(topic._id)}>
-                <div className="flex4 topicHeadline">{topic.post}</div>
-                <div className="flex1">post by {topic.username}</div>
-                <div className="flex2 d-flex f-column al-center j-center">
-                    <div>
-                        post published
-                    </div>
-                    <div>
-                        {topic.time}
-                    </div>
-                </div>
+            <div className="d-flex flex6 al-center f-md-column" onClick={() => open(topic._id)}>
+                <div className="flex4 topicHeadline d-flex al-center f-md-size-20"><span className="text-lg-none"/>{topic.post}</div>
+                <div className="flex1 d-flex al-center j-center f-md-size-12"><span className="text-lg-none">Posted By: </span>{topic.username}</div>
+                <div className="flex1 d-flex al-center j-center f-md-size-12"><span className="text-lg-none">Total replies: </span>{topic.commentCounter}</div>
+                <div className="flex2 d-flex f-column al-center j-center f-md-size-10">{topic.time}</div>
             </div>
         </div>
     )
